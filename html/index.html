@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript CRUD Example</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <h1> <center>CRUD Ops</center> </h1>
+    <hr />
+    <div class="employee-form">
+      <form onSubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <div>
+          <label>Full Name*</label>
+          <label class="validation-error hide" id="fullNameValidationError">
+            This field is required.</label>
+          <input type="text" name="fullName" id="fullName" />
+        </div>
+        <div>
+          <label>Email Id</label>
+          <label class="validation-error hide" id="emailValidationError">
+            This field is required.</label>
+          <input 
+          type="text" 
+          name="email" 
+          id="email" 
+          pattern='[a-z,0-9]{2,30}@[a-z]{4}.[a-z]{2,3}'/>
+        </div>
+        <div>
+          <label>Salary</label>
+          <label class="validation-error hide" id="salaryValidationError">
+            This field is required.</label>
+          <input type="text" name="salary" id="salary" />
+        </div>
+        <div>
+          <label>City</label>
+          <label class="validation-error hide" id="cityValidationError">
+            This field is required.</label>
+          <input 
+          placeholder= "MMYYYY"
+          type="text" 
+          name="city" 
+          id="city"  
+          pattern="((0[1-9])|(1[0-2]))\/(20[0-9]{2})"/>
+        </div>
+        <div class="form-action-buttons">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+    <br />
+    <div class="employees-table">
+      <table class="list" id="employeeList">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email Id</th>
+            <th>Salary</th>
+            <th>City</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="../js/reg.js"></script>
+  </body>
+</html>
